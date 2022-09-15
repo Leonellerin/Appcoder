@@ -5,5 +5,5 @@ from AppCoder.views import inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Inicio/', inicio),
+    path('', inicio),
 ]
