@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Curso
+{% endblock %}
+
+{% block inicio %}
+
+    {% for curso in object_list %}
+        El nombre del curso es {{ curso.nombre }} con la camada {{ curso.camada }}
+        <a href="{% url 'AppCoderEliminarCurso' curso.camada %}">-X-</a>
+        <a href="{% url 'AppCoderEditarCurso' curso.camada %}"> Editar</a>
+        <br>
+    {% endfor %}
+    {% for entregable in entregables %}
+        El entregable es: {{ entregable.nombre }}
+        <br>
+    {% endfor %}
+
+{% endblock %}
