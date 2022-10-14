@@ -1,14 +1,12 @@
 import datetime
 
+import django
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
-import django
-from django.views.generic import ListView
 
 from AppCoder.forms import CursoFormulario, BusquedaCamadaFormulario
-from AppCoder.models import Curso, Entregable
+from AppCoder.models import Curso, Estudiante, Profesor, Entregable
 
 
 def editar_curso(request, camada):
@@ -72,7 +70,7 @@ def busqueda_camada(request):
         'boton_envio': 'Buscar'
     }
 
-    return render(request, 'forms/busquedas.html', contexto)
+    return render(request, 'AppCoder/busqueda_camada.html', contexto)
 
 
 def curso_formulario(request):
@@ -95,7 +93,7 @@ def curso_formulario(request):
         'boton_envio': 'Crear'
     }
 
-    return render(request, 'base_formulario.html', contexto)
+    return render(request, 'AppCoder/curso_formulario.html', contexto)
 
 
 def inicio(request):
@@ -143,7 +141,7 @@ def entregable(request):
     month = 10
     day = 21
     entregable1 = Entregable(
-        nombre="Luis",
+        nombre="Leonel",
         fecha_de_entrega=datetime.date(year=year, month=month, day=day),  # date year month day
         entregado=True
     )
@@ -154,3 +152,9 @@ def entregable(request):
     }
 
     return render(request, 'AppCoder/entregable.html', contexto)
+
+def about_us(request):
+    return render(request, 'AppCoder/about.html')
+
+
+

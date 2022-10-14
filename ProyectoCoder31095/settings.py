@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t&2f@cgc(4e_#6vz91za#1keu5n!j$hyl^@km^dqs2=$4@wbmq'
+SECRET_KEY = 'django-insecure-_*6(4adbb$p(8ln233#&*yqgxc&l%eyubtsd9w*&u6_1scgmgv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ProyectoCode31095.urls'
+ROOT_URLCONF = 'ProyectoCoder31095.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ProyectoCode31095.wsgi.application'
+WSGI_APPLICATION = 'ProyectoCoder31095.wsgi.application'
 
 
 # Database
@@ -130,16 +130,9 @@ LOGIN_URL = 'UserCoderLogin'
 # para imagenes
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-import dj_database_url
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'staticfiles'),)
-
-
-
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
-
