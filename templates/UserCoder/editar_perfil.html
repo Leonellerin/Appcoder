@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Editar Perfil</title>
+{% endblock title %}
+<br><br>
+{% block texto_header %}
+<br>
+    <h4>Editar perfil del usuario: {{request.user.username}}</h4>
+{% endblock texto_header %}
+
+{% block despues_del_header %}
+<br><br>
+<p>
+    <a href={% url 'cambiar_password' %}> Cambiar password </a>
+</p>
+
+<p>
+    <form action={% url 'editar_perfil' %} method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button>Editar</button>
+    </form>
+</p>
+{% endblock despues_del_header %}
